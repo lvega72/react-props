@@ -1,9 +1,10 @@
 // Render the circles using React!
 const App = (props) => {
     let { circles } = props;
-    return (
-        <span>circles</span>
-    )
-}
+    
+    let circleComponents = circles.map( (circle, arrayIndex) => {
+        return <Circle circle={circle} key={arrayIndex}/> 
+    });
 
-const Circle = null;  // CHALLENGE: Write a separate Circle component for use in the App component
+    return <div>{circleComponents}</div>
+}
